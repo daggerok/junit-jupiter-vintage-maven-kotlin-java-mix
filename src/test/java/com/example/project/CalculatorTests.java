@@ -10,13 +10,14 @@
 
 package com.example.project;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@DisplayName("Calculator tests")
 class CalculatorTests {
 
 	@Test
@@ -36,6 +37,6 @@ class CalculatorTests {
 	void add(int first, int second, int expectedResult) {
 		Calculator calculator = new Calculator();
 		assertEquals(expectedResult, calculator.add(first, second),
-				() -> first + " + " + second + " should equal " + expectedResult);
+		             () -> first + " + " + second + " should equal " + expectedResult);
 	}
 }
