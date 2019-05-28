@@ -10,6 +10,13 @@ jobs:
       name: "Jupiter Starter Sample: Maven & Kotlin (JDK 11)"
       jdk: openjdk11
       script: cd $TRAVIS_BUILD_DIR && ./mvnw test
+    - stage: starter
+      name: "Jupiter Starter Sample: Maven & Kotlin (JDK 1.8) versions"
+      script: cd $TRAVIS_BUILD_DIR && ./mvnw -f ./pom-java8.xml versions:display-property-updates
+    - stage: starter
+      name: "Jupiter Starter Sample: Maven & Kotlin (JDK 11) versions"
+      jdk: openjdk11
+      script: cd $TRAVIS_BUILD_DIR && ./mvnw versions:display-property-updates
 cache:
   directories:
     - ~/.m2
